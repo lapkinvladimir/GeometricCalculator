@@ -4,10 +4,10 @@ namespace Tests
 {
     public class Tests
     {
-        private readonly IShape sphere = new Sphere(5);
-        private readonly IShape cylinder = new Cylinder(3, 7);
-        private readonly IShape rectangle = new Rectangle(4, 8);
-        private readonly IShape cube = new Cube(4);
+        private IShape sphere = new Sphere(5);
+        private IShape cylinder = new Cylinder(3, 7);
+        private IShape rectangle = new Rectangle(4, 8);
+        private IShape cube = new Cube(4);
 
         [Test]
         public void TestSphereCalculateArea()
