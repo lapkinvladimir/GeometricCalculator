@@ -3,36 +3,27 @@
 {
     public class Program
     {
-        private double a;
-        private double b;
-        private string operation;
-        
-        public Program(double a, double b, string operation)
+        public static void Main(string[] args)
         {
-            this.a = a;
-            this.b = b;
-            this.operation = operation;
-        }
-        
-        public double Execute()
-        {
-            return operation switch
-            {
-                "+" => a + b,
-                "-" => a - b,
-                "*" => a * b,
-                "/" => Divide(),
-                _ => throw new InvalidOperationException("Invalid operation"),
-            };
-        }
-        
-        private double Divide()
-        {
-            if (b == 0)
-            {
-                throw new DivideByZeroException("Cannot divide by zero");
-            }
-            return a / b;
+            Calculator add = new Calculator(5, 10, "+");
+            Console.WriteLine("Addition:");
+            Console.WriteLine($"Result: {add.Execute()}");
+            Console.WriteLine();
+            
+            Calculator subtract = new Calculator(10, 4, "-");
+            Console.WriteLine("Subtraction:");
+            Console.WriteLine($"Result: {subtract.Execute()}");
+            Console.WriteLine();
+            
+            Calculator multiply = new Calculator(6, 3, "*");
+            Console.WriteLine("Multiplication:");
+            Console.WriteLine($"Result: {multiply.Execute()}");
+            Console.WriteLine();
+            
+            Calculator divide = new Calculator(12, 4, "/");
+            Console.WriteLine("Division:");
+            Console.WriteLine($"Result: {divide.Execute()}");
+            Console.WriteLine();
         }
     }
 }
